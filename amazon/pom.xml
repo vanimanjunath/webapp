@@ -48,59 +48,35 @@
   </profile>
    <profile>
      <id>jacoco</id>
-    <build>
-     <plugins>
-          <plugin>
-                  <groupId>org.jacoco</groupId> <artifactId>jacoco-maven-plugin</artifactId>
-                  <version>0.5.5.201112152213</version>
-         <configuration>
-           <destFile>${basedir}/target/coverage-reports/jacoco-unit.exec</destFile>
-            <dataFile>${basedir}/target/coverage-reports/jacoco-unit.exec</dataFile>
-        </configuration>
-        <executions>
-        <execution>
-                <id>jacoco-initialize</id>
-        <goals>
-     <goal>prepare-agent</goal>
-       </goals>
-        </execution>
-   <execution>
-    <id>jacoco-site</id>
-    <phase>package</phase>
-    <goals>
-     <goal>report</goal>
-    </goals>
-   </execution>
-  </executions>
- </plugin>
- <plugin>
-  <groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-compiler-plugin</artifactId>
-  <configuration>
-   <source>1.5</source>
-   <target>1.5</target>
-  </configuration>
- </plugin>
-</plugins>
- </build>
+<build>
+       <plugins>
+	<plugin>
+		<groupId>org.jacoco</groupId>
+		<artifactId>jacoco-maven-plugin</artifactId>
+		<version>0.8.2</version>
+		<executions>
+			<execution>
+				<goals>
+					<goal>prepare-agent</goal>
+				</goals>
+			</execution>
+			<execution>
+				<id>report</id>
+				<phase>test</phase>
+				<goals>
+					<goal>report</goal>
+				</goals>
+			</execution>
+		</executions>
+	</plugin>
+      </plugins>
+  </build>
   </profile>
-  </profiles>
-  </project>
-
-				  
-
-
-
-
-
-
-
-
-
-
-
-
-
+</profiles>
+<build>
+<finalName>war_proj</finalName>
+</build>
+</project>
 
 
 
